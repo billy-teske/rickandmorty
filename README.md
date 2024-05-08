@@ -1,0 +1,2 @@
+# rickandmorty
+Prueba técnica react
