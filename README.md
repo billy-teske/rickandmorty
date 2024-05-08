@@ -1,3 +1,3 @@
 # rickandmorty
 Prueba técnica react
-1
+2
