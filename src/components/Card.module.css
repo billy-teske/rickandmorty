@@ -4,10 +4,10 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    background-attachment: fixed;
     border-radius: 0.7em;
     box-shadow: var(--box-shadow-card);
     display: flex;
-    border: 1px solid var(--text-color);
 }
 
 @keyframes incard {
@@ -19,12 +19,13 @@
 .figure {
     backdrop-filter: blur(1em);
     background-image: linear-gradient(
-        45deg,
-        var(--background-color),
-        #ffffff50,
-        var(--background-color)
-    );
-    border-radius: 0.6em;
+            45deg,
+            var(--background-color),
+            #60606040,
+            var(--background-color)
+        ),
+        linear-gradient(to right, #60606050, var(--background-color));
+    border-radius: 0.5em;
     display: flex;
     height: 10em;
     margin: 0;
@@ -49,7 +50,7 @@
 .h2 {
     margin: 0;
     padding: 0;
-    font-size: 1.5em;
+    font-size: 1em;
 }
 
 .button {
