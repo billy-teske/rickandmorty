@@ -3,7 +3,7 @@ import styles from './CardSkeleton.module.css';
 import listStyle from './List.module.css';
 
 const CardSkeleton = () => {
-    const [arrayCount, setArrayCount] = useState([1]);
+    const [arrayCount, setArrayCount] = useState([0]);
 
     useEffect(() => {
         const intervalId = setInterval(() => {
