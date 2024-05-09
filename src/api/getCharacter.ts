@@ -21,10 +21,6 @@ export type TCharacter = {
     created: string;
 };
 
-interface IPropsCharacter {
-    page: number;
-}
-
 interface IResultCharacter {
     info: {
         count: number;
@@ -35,9 +31,9 @@ interface IResultCharacter {
     results: TCharacter[];
 }
 
-const getCharacter = async ({ page }: IPropsCharacter): Promise<IResultCharacter> => {
-    const url = `${apiConstants.character}?page=${page}`;
-    await new Promise(resolve => setTimeout(resolve, 5000));
+const getCharacter = async (): Promise<IResultCharacter> => {
+    const url = `${apiConstants.character}?page=${10}`;
+    await new Promise(resolve => setTimeout(resolve, 2000));
     const response: Response = await fetch(url);
     if (!response.ok) {
         throw new Error('Network response was not ok');

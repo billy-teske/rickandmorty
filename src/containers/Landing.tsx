@@ -5,8 +5,7 @@ import CardSkeleton from '../components/CardSkeleton';
 import useCharacter from '../hooks/useCharacter';
 
 const Landing = () => {
-    const page = 10;
-    const { isFetching, data, error } = useCharacter({ page });
+    const { isFetching, characters, error } = useCharacter();
 
     if (isFetching) {
         return (
@@ -21,8 +20,6 @@ const Landing = () => {
     if (error) {
         return <span>error</span>;
     }
-
-    const characters = data?.results || [];
 
     return (
         <>
