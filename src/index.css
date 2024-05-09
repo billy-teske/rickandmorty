@@ -8,7 +8,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --background-card: #ffffff10;
+    --background-card: #555;
     --background-color: #242424;
     --border-card: 1px solid #232323;
     --box-shadow-card: 0 0 0 transparent;
@@ -38,7 +38,7 @@ body {
         --background-card: #ffffff;
         --background-color: #ffffff;
         --border-card: 1px solid #787976;
-        --box-shadow-card: 0 0 0.5em #00000080;
+        --box-shadow-card: 0 0 5px #00000050;
         --text-color: #213547;
     }
 }
@@ -54,8 +54,8 @@ button {
     border: none;
     cursor: pointer;
     font-size: 1em;
-    padding: 0.2em 0.5em;
-    transition: all 0.3s ease;
+    padding: 0.2em 1em;
+    transition: all 0.1s ease;
 }
 
 button:hover {

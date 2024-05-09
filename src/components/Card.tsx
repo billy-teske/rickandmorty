@@ -21,11 +21,9 @@ const Card = ({
         <figure className={styles.figure}>
             <img className={styles.img} src={image} alt="imagen" />
             <figcaption className={styles.figcaption}>
-                <h2 className={styles.h2}>{name}</h2>
-                <span>{gender} {species}</span>
-                <span>{status}</span>
-                <span>{type}</span>
-                <button className={styles.button}>ver más</button>
+                <h2>{name}</h2>
+                <p>{gender} {species} {status} {type}</p>
+                <button className={styles.button}>more info</button>
             </figcaption>
         </figure>
     </li>
