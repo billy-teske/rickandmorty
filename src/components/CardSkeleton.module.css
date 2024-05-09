@@ -1,0 +1,37 @@
+.skeleton {
+    border-radius: 0.7em;
+    box-shadow: var(--box-shadow-card);
+    display: flex;
+    background-color: #60606030;
+    width: 20em;
+    height: 12em;
+    animation: iter 4s ease;
+}
+
+@keyframes iter {
+    from {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    60% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .skeleton {
+        width: 10em;
+        height: 20em;
+    }
+}

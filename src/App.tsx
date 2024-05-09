@@ -1,16 +1,15 @@
+import { QueryClient, QueryClientProvider } from 'react-query';
+import Landing from './containers/Landing';
 import './App.css';
-import Head from './components/Head';
-import List from './components/List';
-import Footer from './components/Footer';
 
-function App() {
+const queryClient = new QueryClient();
+
+const App = () => {
     return (
-        <>
-            <Head />
-            <List />
-            <Footer />
-        </>
+        <QueryClientProvider client={queryClient}>
+            <Landing />
+        </QueryClientProvider>
     );
-}
+};
 
 export default App;

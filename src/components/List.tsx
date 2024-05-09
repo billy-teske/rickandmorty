@@ -1,19 +1,22 @@
+import { TCharacter } from '../api/getCharacter';
 import Card from './Card';
 import Styles from './List.module.css';
 
-const items = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14];
+interface IPropsList {
+    characters: TCharacter[];
+}
 
-const List = () => (
+const List = ({ characters }: IPropsList) => (
     <ul className={Styles.list}>
-        {items.map(item => (
+        {characters.map(character => (
             <Card
-                key={item}
-                name="Toxic Rick"
-                status="Dead"
-                species="Humanoid"
-                type="Rick's Toxic Side"
-                gender="Male"
-                image="https://rickandmortyapi.com/api/character/avatar/368.jpeg"
+                key={character.id}
+                name={character.name}
+                status={character.status}
+                species={character.species}
+                type={character.type}
+                gender={character.gender}
+                image={character.image}
             />
         ))}
     </ul>
