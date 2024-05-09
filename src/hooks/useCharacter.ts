@@ -8,6 +8,7 @@ const useCharacter = () => {
     const { isFetching, data, error } = useQuery({
         queryKey: CHARACTERS_KEY,
         queryFn: getCharacter,
+        refetchOnWindowFocus: false,
     });
 
     const characters = data?.results || [];
