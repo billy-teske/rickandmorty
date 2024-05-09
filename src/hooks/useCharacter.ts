@@ -3,17 +3,16 @@ import getCharacter from '../api/getCharacter';
 
 const CHARACTERS_KEY = 'character-keys';
 
-interface IPropsUseCharacters {
-    page: number;
-}
+const useCharacter = () => {
 
-const useCharacter = ({ page }: IPropsUseCharacters) => {
     const { isFetching, data, error } = useQuery({
         queryKey: CHARACTERS_KEY,
-        queryFn: () => getCharacter({ page }),
+        queryFn: getCharacter,
     });
 
-    return { isFetching, data, error };
+    const characters = data?.results || [];
+
+    return { isFetching, characters, error };
 };
 
 export default useCharacter;
