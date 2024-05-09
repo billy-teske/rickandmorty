@@ -1,0 +1,17 @@
+.search {
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    padding: 0.5em 0;
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+.input {
+    padding: 0.5em 1em;
+    border-radius: 0.5em;
+    border: 1px solid var(--text-color);
+    font-size: 1em;
+}

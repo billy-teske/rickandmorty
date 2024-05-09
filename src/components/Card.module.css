@@ -1,0 +1,74 @@
+.card {
+    animation: incard 0.5s ease;
+    background-color: var(--background-card);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 0.7em;
+    box-shadow: var(--box-shadow-card);
+    display: flex;
+    border: 1px solid var(--text-color);
+}
+
+@keyframes incard {
+    from {
+        opacity: 0;
+    }
+}
+
+.figure {
+    backdrop-filter: blur(1em);
+    background-image: linear-gradient(
+        45deg,
+        var(--background-color),
+        #ffffff50,
+        var(--background-color)
+    );
+    border-radius: 0.6em;
+    display: flex;
+    height: 10em;
+    margin: 0;
+    padding: 1em;
+    gap: 1em;
+}
+
+.img {
+    border-radius: 50%;
+}
+
+.figcaption {
+    border-radius: 0.5em;
+    display: flex;
+    width: 8em;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 0.2em;
+}
+
+.h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5em;
+}
+
+.button {
+    background-color: var(--text-color);
+    color: var(--background-color);
+}
+
+@media (max-width: 1024px) {
+    .figure {
+        align-items: center;
+        flex-direction: column;
+        height: auto;
+    }
+
+    .img {
+        width: 8em;
+    }
+
+    .figcaption {
+        align-items: center;
+    }
+}
