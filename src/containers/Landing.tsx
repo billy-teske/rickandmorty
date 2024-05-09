@@ -27,7 +27,7 @@ const Landing = () => {
     return (
         <>
             <Head />
-            {characters && <List characters={characters} />}
+            <List characters={characters} />
             <Footer />
         </>
     );
