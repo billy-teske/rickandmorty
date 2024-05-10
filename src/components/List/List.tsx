@@ -1,13 +1,13 @@
-import { TCharacter } from '../api/getCharacter';
-import Card from './Card';
-import Styles from './List.module.css';
+import { TCharacter } from '../../api/getCharacter';
+import Card from '../Card/Card';
+import styles from './List.module.css';
 
 interface IPropsList {
     characters: TCharacter[];
 }
 
 const List = ({ characters }: IPropsList) => (
-    <ul className={Styles.list}>
+    <ul className={styles.list}>
         {characters.map(character => (
             <Card
                 key={character.id}

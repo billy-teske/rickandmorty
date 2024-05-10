@@ -1,7 +1,7 @@
-import Head from '../components/Head';
-import List from '../components/List';
-import Footer from '../components/Footer';
-import CardSkeleton from '../components/CardSkeleton';
+import Head from '../components/Head/Head';
+import List from '../components/List/List';
+import Footer from '../components/Footer/Footer';
+import CardSkeleton from '../components/Card/CardSkeleton';
 import useCharacter from '../hooks/useCharacter';
 
 const Landing = () => {

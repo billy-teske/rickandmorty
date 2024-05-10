@@ -1,4 +1,4 @@
-import Search from './Search';
+import Search from '../Search/Search';
 import styles from './Head.module.css';
 
 const Head = () => (

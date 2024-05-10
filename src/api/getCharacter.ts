@@ -1,4 +1,4 @@
-import apiConstants from '../constants/apis.json';
+import apiConstants from '../constants/apiConstants';
 
 export type TCharacter = {
     id: number;
@@ -21,7 +21,7 @@ export type TCharacter = {
     created: string;
 };
 
-interface IResultCharacter {
+export type TResultApiCharacter = {
     info: {
         count: number;
         pages: number;
@@ -29,12 +29,12 @@ interface IResultCharacter {
         prev: string;
     };
     results: TCharacter[];
-}
+};
 
-const getCharacter = async (): Promise<IResultCharacter> => {
-    const url = `${apiConstants.character}?page=${10}`;
-    await new Promise(resolve => setTimeout(resolve, 2000));
+const getCharacter = async (): Promise<TResultApiCharacter> => {
+    const url = `${apiConstants.character}?page=${20}`;
     const response: Response = await fetch(url);
+
     if (!response.ok) {
         throw new Error('Network response was not ok');
     }
