@@ -1,21 +1,33 @@
 import { useQuery } from 'react-query';
-import getCharacters from '../api/getCharacters';
+import getCharacters from '../api/getCharacter';
 import useStore from './useStore';
+import { useEffect } from 'react';
 
 const CHARACTERS_KEY = 'character-keys';
 
 const useCharacters = () => {
-    const characters = useStore(state => state.characters);
-    const setCharacters = useStore(state => state.setCharacters);
-
-    const { isFetching, error } = useQuery({
+    const { characters, setCharacters, page, toPage, nextPage, toNextPage } = useStore(state => state);
+    const { isFetching, error, refetch } = useQuery({
         queryKey: CHARACTERS_KEY,
-        queryFn: getCharacters,
+        queryFn: () => {
+            if (page !== nextPage) {
+                return getCharacters({ page: nextPage });
+            }
+        },
         refetchOnWindowFocus: false,
-        onSuccess: ((data) => setCharacters(data?.results || []))
+        onSuccess: ((data) => {
+            setCharacters(data?.results || []);
+            toPage();
+        })
     });
 
-    return { isFetching, characters, error };
+    useEffect(() => {
+        if (page !== nextPage) {
+            refetch();
+        }
+    }, [page, nextPage, refetch]);
+
+    return { isFetching, characters, error, seeMore: toNextPage };
 };
 
 export default useCharacters;

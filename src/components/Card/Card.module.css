@@ -65,18 +65,6 @@
     text-align: right;
 }
 
-.button {
-    background-color: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
-    font-size: 0.8em;
-}
-
-.button:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
-}
-
 @media (max-width: 1024px) {
     .figure {
         align-items: center;

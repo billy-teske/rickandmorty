@@ -1,10 +1,10 @@
 import { enableFetchMocks } from 'jest-fetch-mock';
-import getCharacters from './getCharacters';
+import getCharacter from './getCharacter';
 import characterMock from './__mock__/characterMock';
 
 enableFetchMocks();
 
-describe('getCharacters Api', () => {
+describe('getCharacter Api', () => {
     beforeEach(() => {
         fetchMock.doMock();
     });
@@ -12,7 +12,7 @@ describe('getCharacters Api', () => {
     it('should return array of characters', async () => {
         fetchMock.mockResponseOnce(JSON.stringify(characterMock));
 
-        const { results } = await getCharacters();
+        const { results } = await getCharacter({ page: 1 });
 
         expect(results.length).toEqual(1);
     });
@@ -23,7 +23,7 @@ describe('getCharacters Api', () => {
         })));
 
         try {
-            await getCharacters();
+            await getCharacter({ page: 1 });
         } catch (error) {
             expect(error).toEqual(new Error('Network response was not ok'));
         }

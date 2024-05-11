@@ -17,19 +17,15 @@
     gap: 2em;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto auto 1fr;
-    height: 100%;
+    min-height: 50vh;
     justify-content: center;
     min-height: 100vh;
     padding: 4em 0;
     width: 100%;
 }
 
-.content img {
+.content section * {
     animation: fade 0.3s ease;
-    border-radius: 1em;
-    grid-row: 1 / span 2;
-    margin: 0 0 0 auto;
-    max-width: 60vw;
 }
 
 @keyframes fade {
@@ -38,25 +34,56 @@
     }
 }
 
-.content h2 {
+.content img,
+.img {
+    border-radius: 1em;
+    grid-row: 1 / span 2;
+    margin: 0 0 0 auto;
+    max-width: 60vw;
+    background-color: var(--background-color);
+    width: 300px;
+    height: 300px;
+}
+
+.content h2,
+.h2 {
     font-size: 2em;
     margin: 0;
     padding: 0 2em;
     text-align: left;
 }
 
-.content ul {
+.h2 {
+    background-color: var(--background-color);
+    border-radius: 1em;
+    margin-right: auto;
+    margin-left: 2em;
+    width: 5em;
+    height: 1.5em;
+}
+
+.content ul,
+.ul {
     margin: 0 0 0 4em;
     padding: 0;
 }
 
-.content li {
+.content li,
+.li {
     margin: 0;
     padding: 0.5em 1em;
     text-align: left;
 }
 
-.content button {
+.li {
+    background-color: var(--background-color);
+    width: 10em;
+    border-radius: 1em;
+    height: 1em;
+    margin: 1em auto 1em 0;
+}
+
+.button {
     grid-column: 1 / span 2;
     margin: 0 auto auto auto;
 }
@@ -72,11 +99,17 @@
         text-align: center;
     }
 
-    .content img {
+    .h2 {
+        padding: 1em;
+        margin: auto;
+    }
+
+    .content img,
+    .img {
         grid-row: 2;
     }
 
-    .content button {
+    .button {
         grid-column: 1;
     }
 }

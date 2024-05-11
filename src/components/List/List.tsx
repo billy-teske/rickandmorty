@@ -1,4 +1,4 @@
-import { TCharacter } from '../../api/getCharacters';
+import { TCharacter } from '../../api/getCharacter';
 import Card from '../Card/Card';
 import styles from './List.module.css';
 

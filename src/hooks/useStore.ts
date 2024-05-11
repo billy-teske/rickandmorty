@@ -1,9 +1,13 @@
 import { create } from 'zustand';
-import { TCharacter } from '../api/getCharacters';
+import { TCharacter } from '../api/getCharacter';
 
 type TState = {
     characters: TCharacter[];
     setCharacters: (newItems: TCharacter[]) => void;
+    page: number;
+    nextPage: number;
+    toPage: () => void;
+    toNextPage: () => void;
 };
 
 const useStore = create<TState>((set) => ({
@@ -19,6 +23,10 @@ const useStore = create<TState>((set) => ({
             characters: [...state.characters, ...addedCharacters],
         };
     }),
+    page: 0,
+    toPage: () => set((state) => ({ page: state.nextPage })),
+    nextPage: 1,
+    toNextPage: () => set((state) => ({ nextPage: state.page + 1 })),
 }));
 
 export default useStore;

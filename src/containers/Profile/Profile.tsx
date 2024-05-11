@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useParams, useHistory } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import useStore from "../../hooks/useStore";
 import styles from "./Profile.module.css";
 
@@ -13,12 +13,22 @@ const Profile = () => {
         window.scrollTo(0, 0);
     }, []);
 
-    const handlerGoBack = () => {
-        window.history.back();
-    };
-
     if (!character) {
-        return <span>no existe personaje</span>;
+        return (
+            <article className={styles.content}>
+                <section>
+                    <div className={styles.img}></div>
+                    <div className={styles.h2}></div>
+                    <div className={styles.ul}>
+                        <div className={styles.li}></div>
+                        <div className={styles.li}></div>
+                        <div className={styles.li}></div>
+                        <div className={styles.li}></div>
+                    </div>
+                    <Link to="/" className={styles.button}>Go Back</Link>
+                </section>
+            </article>
+        );
     }
 
     const {
@@ -44,7 +54,7 @@ const Profile = () => {
                     <li>Gender {gender}</li>
                     <li>Status {status}</li>
                 </ul>
-                <button onClick={handlerGoBack}>Go Back</button>
+                <Link to="/" className={styles.button}>Go Back</Link>
             </section>
         </article>
     );

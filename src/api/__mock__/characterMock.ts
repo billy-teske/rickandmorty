@@ -1,4 +1,4 @@
-import { TResultApiCharacter } from "../getCharacters";
+import { TResultApiCharacter } from "../getCharacter";
 
 const characterMock: TResultApiCharacter = {
     "info": {

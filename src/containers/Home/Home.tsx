@@ -1,19 +1,18 @@
 import List from '../../components/List/List';
 import CardSkeleton from '../../components/Card/CardSkeleton';
 import useCharacter from '../../hooks/useCharacters';
+import styles from './Home.module.css';
 
 const Home = () => {
-    const { isFetching, characters, error } = useCharacter();
+    const { isFetching, characters, error, seeMore } = useCharacter();
 
-    if (isFetching) {
-        return <CardSkeleton />;
-    }
-
-    if (error) {
-        return <span>error</span>;
-    }
-
-    return <List characters={characters} />;
+    return (
+        <>
+            {!!characters.length && <List characters={characters} />}
+            {isFetching ? <CardSkeleton /> : <button onClick={seeMore} className={styles.button}>See More</button>}
+            {error && <em>error</em>}
+        </>
+    );
 };
 
 export default Home;
