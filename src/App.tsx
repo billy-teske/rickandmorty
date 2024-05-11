@@ -1,5 +1,8 @@
 import { QueryClient, QueryClientProvider } from 'react-query';
-import Landing from './containers/Landing';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Head from './components/Head/Head';
+import Footer from './components/Footer/Footer';
+import Home from './containers/Home/Home';
 import './App.css';
 
 const queryClient = new QueryClient();
@@ -7,7 +10,13 @@ const queryClient = new QueryClient();
 const App = () => {
     return (
         <QueryClientProvider client={queryClient}>
-            <Landing />
+            <Head />
+            <Router>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                </Routes>
+            </Router>
+            <Footer />
         </QueryClientProvider>
     );
 };
