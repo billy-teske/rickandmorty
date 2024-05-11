@@ -1,5 +1,5 @@
 .card {
-    animation: incard 0.5s ease;
+    animation: fade 0.5s ease;
     background-color: var(--background-card);
     background-position: center;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@
     display: flex;
 }
 
-@keyframes incard {
+@keyframes fade {
     from {
         opacity: 0;
     }

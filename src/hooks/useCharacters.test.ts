@@ -1,11 +1,11 @@
 import { renderHook } from '@testing-library/react';
 import * as ReactQuery from 'react-query';
-import useCharacter from './useCharacter';
+import useCharacters from './useCharacters';
 import characterMock from '../api/__mock__/characterMock';
 
 const mockReactQuery = jest.spyOn(ReactQuery, 'useQuery');
 
-describe('useCharacter hook', () => {
+describe('useCharacters hook', () => {
     it('should return isFetching', () => {
         mockReactQuery.mockImplementation(
             jest.fn().mockReturnValue({
@@ -13,7 +13,7 @@ describe('useCharacter hook', () => {
             })
         );
 
-        const { result } = renderHook(() => useCharacter());
+        const { result } = renderHook(() => useCharacters());
 
         expect(result.current.isFetching).toBeTruthy();
     });
@@ -25,7 +25,7 @@ describe('useCharacter hook', () => {
             })
         );
 
-        const { result } = renderHook(() => useCharacter());
+        const { result } = renderHook(() => useCharacters());
 
         expect(result.current.error).toBeTruthy();
     });
@@ -37,7 +37,7 @@ describe('useCharacter hook', () => {
             })
         );
 
-        const { result } = renderHook(() => useCharacter());
+        const { result } = renderHook(() => useCharacters());
 
         expect(result.current.characters).toEqual(characterMock.results);
     });

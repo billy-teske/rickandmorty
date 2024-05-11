@@ -1,6 +1,6 @@
 import List from '../../components/List/List';
 import CardSkeleton from '../../components/Card/CardSkeleton';
-import useCharacter from '../../hooks/useCharacter';
+import useCharacter from '../../hooks/useCharacters';
 
 const Home = () => {
     const { isFetching, characters, error } = useCharacter();

@@ -4,7 +4,7 @@ import Head from '../../components/Head/Head';
 import List from '../../components/List/List';
 import Footer from '../../components/Footer/Footer';
 import CardSkeleton from '../../components/Card/CardSkeleton';
-import useCharacter from '../../hooks/useCharacter';
+import useCharacter from '../../hooks/useCharacters';
 import characterMock from '../../api/__mock__/characterMock';
 
 jest.mock('../../components/Head/Head', () => jest.fn());

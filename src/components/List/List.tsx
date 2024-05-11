@@ -1,4 +1,4 @@
-import { TCharacter } from '../../api/getCharacter';
+import { TCharacter } from '../../api/getCharacters';
 import Card from '../Card/Card';
 import styles from './List.module.css';
 
@@ -10,13 +10,14 @@ const List = ({ characters }: IPropsList) => (
     <ul className={styles.list}>
         {characters.map(character => (
             <Card
+                gender={character.gender}
+                id={character.id}
+                image={character.image}
                 key={character.id}
                 name={character.name}
-                status={character.status}
                 species={character.species}
+                status={character.status}
                 type={character.type}
-                gender={character.gender}
-                image={character.image}
             />
         ))}
     </ul>

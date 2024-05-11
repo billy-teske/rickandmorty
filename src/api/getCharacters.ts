@@ -21,7 +21,7 @@ export type TCharacter = {
     created: string;
 };
 
-export type TResultApiCharacter = {
+export type TResultApiCharacters = {
     info: {
         count: number;
         pages: number;
@@ -31,7 +31,7 @@ export type TResultApiCharacter = {
     results: TCharacter[];
 };
 
-const getCharacter = async (): Promise<TResultApiCharacter> => {
+const getCharacters = async (): Promise<TResultApiCharacters> => {
     const url = `${apiConstants.character}?page=${20}`;
     const response: Response = await fetch(url);
 
@@ -41,4 +41,4 @@ const getCharacter = async (): Promise<TResultApiCharacter> => {
     return await response.json();
 };
 
-export default getCharacter;
+export default getCharacters;
