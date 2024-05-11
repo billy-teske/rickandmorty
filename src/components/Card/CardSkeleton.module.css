@@ -1,11 +1,15 @@
 .skeleton {
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-name: iter;
+    animation-timing-function: ease;
+    background-color: #60606030;
     border-radius: 0.7em;
     box-shadow: var(--box-shadow-card);
     display: flex;
-    background-color: #60606030;
-    width: 20em;
     height: 12em;
-    animation: iter 4s ease;
+    opacity: 0;
+    width: 20em;
 }
 
 @keyframes iter {
