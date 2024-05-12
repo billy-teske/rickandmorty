@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">26.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>13/13</span>
+                <span class='fraction'>4/15</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">9.09% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>9/9</span>
+                <span class='fraction'>1/11</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">100% </span>
+                <span class="strong">27.27% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/10</span>
+                <span class='fraction'>3/11</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line high'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -95,7 +95,11 @@
 <a name='L30'></a><a href='#L30'>30</a>
 <a name='L31'></a><a href='#L31'>31</a>
 <a name='L32'></a><a href='#L32'>32</a>
-<a name='L33'></a><a href='#L33'>33</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L33'></a><a href='#L33'>33</a>
+<a name='L34'></a><a href='#L34'>34</a>
+<a name='L35'></a><a href='#L35'>35</a>
+<a name='L36'></a><a href='#L36'>36</a>
+<a name='L37'></a><a href='#L37'>37</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -105,25 +109,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">4x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
@@ -137,25 +145,29 @@ export type TState = {
     nextPage: number;
     toPage: () =&gt; void;
     toNextPage: () =&gt; void;
+    filter: null | string;
+    setFilter: (newFilter: string | null) =&gt; void;
 };
 &nbsp;
 const useStore = create&lt;TState&gt;((set) =&gt; ({
     characters: [],
-    setCharacters: (newsCharacters) =&gt; set((state) =&gt; {
-        const addedCharacters = newsCharacters.filter(
-            (newCharacter) =&gt; !state.characters.find(
-                character =&gt; newCharacter.id === character.id
+    setCharacters: <span class="fstat-no" title="function not covered" >(n</span>ewsCharacters) =&gt; <span class="cstat-no" title="statement not covered" >set(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; {</span>
+        const addedCharacters = <span class="cstat-no" title="statement not covered" >newsCharacters.filter(</span>
+<span class="fstat-no" title="function not covered" >            (n</span>ewCharacter) =&gt; <span class="cstat-no" title="statement not covered" >!state.characters.find(</span>
+<span class="fstat-no" title="function not covered" >                character </span>=&gt; <span class="cstat-no" title="statement not covered" >newCharacter.id === character.id</span>
             )
         );
 &nbsp;
-        return {
+<span class="cstat-no" title="statement not covered" >        return {</span>
             characters: [...state.characters, ...addedCharacters],
         };
     }),
     page: 0,
-    toPage: () =&gt; set((state) =&gt; ({ page: state.nextPage })),
+    toPage: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >set(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; (<span class="cstat-no" title="statement not covered" >{ page: state.nextPage })</span>),</span>
     nextPage: 1,
-    toNextPage: () =&gt; set((state) =&gt; ({ nextPage: state.page + 1 })),
+    toNextPage: <span class="fstat-no" title="function not covered" >() =</span>&gt; <span class="cstat-no" title="statement not covered" >set(<span class="fstat-no" title="function not covered" >(s</span>tate) =&gt; (<span class="cstat-no" title="statement not covered" >{ nextPage: state.page + 1 })</span>),</span>
+    filter: null,
+    setFilter: <span class="fstat-no" title="function not covered" >(n</span>ewFilter) =&gt; <span class="cstat-no" title="statement not covered" >set(<span class="fstat-no" title="function not covered" >() =</span>&gt; (<span class="cstat-no" title="statement not covered" >{ filter: newFilter })</span>),</span>
 }));
 &nbsp;
 export default useStore;
@@ -166,7 +178,7 @@ export default useStore;
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2024-05-12T00:39:32.575Z
+                at 2024-05-12T02:05:36.378Z
             </div>
         <script src="../prettify.js"></script>
         <script>

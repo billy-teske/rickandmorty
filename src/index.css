@@ -70,3 +70,8 @@ button:hover {
     color: var(--background-color);
     filter: brightness(1.2);
 }
+
+input[type="search" i]::-webkit-search-cancel-button {
+    cursor: pointer;
+    padding: 5px;
+}

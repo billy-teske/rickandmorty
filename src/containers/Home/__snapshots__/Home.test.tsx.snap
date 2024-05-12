@@ -5,12 +5,36 @@ exports[`Home Component should render Home when load characters 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <form
+        class="search"
+        data-testid="form"
+      >
+        <input
+          aria-label="Search"
+          class="input"
+          data-testid="search"
+          placeholder="Search"
+          type="search"
+        />
+      </form>
       <span>
         CardSkeleton
       </span>
     </div>
   </body>,
   "container": <div>
+    <form
+      class="search"
+      data-testid="form"
+    >
+      <input
+        aria-label="Search"
+        class="input"
+        data-testid="search"
+        placeholder="Search"
+        type="search"
+      />
+    </form>
     <span>
       CardSkeleton
     </span>
@@ -74,6 +98,18 @@ exports[`Home Component should render Home when the api have a error 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <form
+        class="search"
+        data-testid="form"
+      >
+        <input
+          aria-label="Search"
+          class="input"
+          data-testid="search"
+          placeholder="Search"
+          type="search"
+        />
+      </form>
       <button
         class="button"
       >
@@ -85,6 +121,18 @@ exports[`Home Component should render Home when the api have a error 1`] = `
     </div>
   </body>,
   "container": <div>
+    <form
+      class="search"
+      data-testid="form"
+    >
+      <input
+        aria-label="Search"
+        class="input"
+        data-testid="search"
+        placeholder="Search"
+        type="search"
+      />
+    </form>
     <button
       class="button"
     >
@@ -153,6 +201,18 @@ exports[`Home Component should render Home with characters 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
+      <form
+        class="search"
+        data-testid="form"
+      >
+        <input
+          aria-label="Search"
+          class="input"
+          data-testid="search"
+          placeholder="Search"
+          type="search"
+        />
+      </form>
       <span>
         List
       </span>
@@ -164,6 +224,18 @@ exports[`Home Component should render Home with characters 1`] = `
     </div>
   </body>,
   "container": <div>
+    <form
+      class="search"
+      data-testid="form"
+    >
+      <input
+        aria-label="Search"
+        class="input"
+        data-testid="search"
+        placeholder="Search"
+        type="search"
+      />
+    </form>
     <span>
       List
     </span>

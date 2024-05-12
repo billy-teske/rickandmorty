@@ -8,6 +8,8 @@ export type TState = {
     nextPage: number;
     toPage: () => void;
     toNextPage: () => void;
+    filter: null | string;
+    setFilter: (newFilter: string | null) => void;
 };
 
 const useStore = create<TState>((set) => ({
@@ -27,6 +29,8 @@ const useStore = create<TState>((set) => ({
     toPage: () => set((state) => ({ page: state.nextPage })),
     nextPage: 1,
     toNextPage: () => set((state) => ({ nextPage: state.page + 1 })),
+    filter: null,
+    setFilter: (newFilter) => set(() => ({ filter: newFilter })),
 }));
 
 export default useStore;
