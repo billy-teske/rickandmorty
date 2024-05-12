@@ -21,6 +21,11 @@ export type TCharacter = {
     created: string;
 };
 
+interface IPropsGetCharacter {
+    id?: number;
+    page?: number;
+}
+
 export type TResultApiCharacter = {
     info: {
         count: number;
@@ -31,8 +36,12 @@ export type TResultApiCharacter = {
     results: TCharacter[];
 };
 
-const getCharacter = async (): Promise<TResultApiCharacter> => {
-    const url = `${apiConstants.character}?page=${20}`;
+type TGetCharacter = (props: IPropsGetCharacter) => Promise<TResultApiCharacter | TCharacter>;
+
+const getCharacter: TGetCharacter = async ({ id, page }) => {
+    const params = id ? `/${id}` : `?page=${page || 0}`;
+    const url = `${apiConstants.character}${params}`;
+
     const response: Response = await fetch(url);
 
     if (!response.ok) {

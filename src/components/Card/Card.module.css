@@ -1,5 +1,5 @@
 .card {
-    animation: incard 0.5s ease;
+    animation: fade 0.5s ease;
     background-color: var(--background-card);
     background-position: center;
     background-repeat: no-repeat;
@@ -10,7 +10,7 @@
     display: flex;
 }
 
-@keyframes incard {
+@keyframes fade {
     from {
         opacity: 0;
     }
@@ -63,18 +63,6 @@
     padding: 0;
     font-size: 1.1em;
     text-align: right;
-}
-
-.button {
-    background-color: transparent;
-    color: var(--text-color);
-    border: 1px solid var(--text-color);
-    font-size: 0.8em;
-}
-
-.button:hover {
-    background-color: var(--text-color);
-    color: var(--background-color);
 }
 
 @media (max-width: 1024px) {

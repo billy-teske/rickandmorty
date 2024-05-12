@@ -1,7 +1,9 @@
 import styles from './Card.module.css';
+import { Link } from 'react-router-dom';
 
 interface IPropsCard {
     gender?: string;
+    id: number;
     image: string;
     name: string;
     species?: string;
@@ -11,6 +13,7 @@ interface IPropsCard {
 
 const Card = ({
     gender,
+    id,
     image,
     name,
     species,
@@ -23,7 +26,7 @@ const Card = ({
             <figcaption className={styles.figcaption}>
                 <h2>{name}</h2>
                 <p>{gender} {species} {status} {type}</p>
-                <button className={styles.button}>more info</button>
+                <Link to={`./profile/${id}`} className={styles.button}>more info</Link>
             </figcaption>
         </figure>
     </li>

@@ -10,7 +10,43 @@ exports[`CardSkeleton Component should render a cardSkeleton 1`] = `
       >
         <div
           class="skeleton"
+          style="animation-delay: 0s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.1s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.2s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.3s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.4s;"
+        />
+        <div
+          class="skeleton"
           style="animation-delay: 0.5s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.6s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.7s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.8s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 0.9s;"
         />
         <div
           class="skeleton"
@@ -18,27 +54,39 @@ exports[`CardSkeleton Component should render a cardSkeleton 1`] = `
         />
         <div
           class="skeleton"
+          style="animation-delay: 1.1s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 1.2s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 1.3s;"
+        />
+        <div
+          class="skeleton"
+          style="animation-delay: 1.4s;"
+        />
+        <div
+          class="skeleton"
           style="animation-delay: 1.5s;"
         />
         <div
           class="skeleton"
-          style="animation-delay: 2s;"
+          style="animation-delay: 1.6s;"
         />
         <div
           class="skeleton"
-          style="animation-delay: 2.5s;"
+          style="animation-delay: 1.7s;"
         />
         <div
           class="skeleton"
-          style="animation-delay: 3s;"
+          style="animation-delay: 1.8s;"
         />
         <div
           class="skeleton"
-          style="animation-delay: 3.5s;"
-        />
-        <div
-          class="skeleton"
-          style="animation-delay: 4s;"
+          style="animation-delay: 1.9s;"
         />
       </div>
     </div>
@@ -49,7 +97,43 @@ exports[`CardSkeleton Component should render a cardSkeleton 1`] = `
     >
       <div
         class="skeleton"
+        style="animation-delay: 0s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.1s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.2s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.3s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.4s;"
+      />
+      <div
+        class="skeleton"
         style="animation-delay: 0.5s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.6s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.7s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.8s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 0.9s;"
       />
       <div
         class="skeleton"
@@ -57,27 +141,39 @@ exports[`CardSkeleton Component should render a cardSkeleton 1`] = `
       />
       <div
         class="skeleton"
+        style="animation-delay: 1.1s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 1.2s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 1.3s;"
+      />
+      <div
+        class="skeleton"
+        style="animation-delay: 1.4s;"
+      />
+      <div
+        class="skeleton"
         style="animation-delay: 1.5s;"
       />
       <div
         class="skeleton"
-        style="animation-delay: 2s;"
+        style="animation-delay: 1.6s;"
       />
       <div
         class="skeleton"
-        style="animation-delay: 2.5s;"
+        style="animation-delay: 1.7s;"
       />
       <div
         class="skeleton"
-        style="animation-delay: 3s;"
+        style="animation-delay: 1.8s;"
       />
       <div
         class="skeleton"
-        style="animation-delay: 3.5s;"
-      />
-      <div
-        class="skeleton"
-        style="animation-delay: 4s;"
+        style="animation-delay: 1.9s;"
       />
     </div>
   </div>,

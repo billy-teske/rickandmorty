@@ -1,31 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Landing Component should render Landing when load characters 1`] = `
+exports[`Home Component should render Home when load characters 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span>
-        Head
-      </span>
       <span>
         CardSkeleton
       </span>
-      <span>
-        Footer
-      </span>
     </div>
   </body>,
   "container": <div>
-    <span>
-      Head
-    </span>
     <span>
       CardSkeleton
     </span>
-    <span>
-      Footer
-    </span>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -81,20 +69,30 @@ exports[`Landing Component should render Landing when load characters 1`] = `
 }
 `;
 
-exports[`Landing Component should render Landing when the api have a error 1`] = `
+exports[`Home Component should render Home when the api have a error 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span>
+      <button
+        class="button"
+      >
+        See More
+      </button>
+      <em>
         error
-      </span>
+      </em>
     </div>
   </body>,
   "container": <div>
-    <span>
+    <button
+      class="button"
+    >
+      See More
+    </button>
+    <em>
       error
-    </span>
+    </em>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],
@@ -150,32 +148,30 @@ exports[`Landing Component should render Landing when the api have a error 1`] =
 }
 `;
 
-exports[`Landing Component should render Landing with characters 1`] = `
+exports[`Home Component should render Home with characters 1`] = `
 {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <span>
-        Head
-      </span>
       <span>
         List
       </span>
-      <span>
-        Footer
-      </span>
+      <button
+        class="button"
+      >
+        See More
+      </button>
     </div>
   </body>,
   "container": <div>
     <span>
-      Head
-    </span>
-    <span>
       List
     </span>
-    <span>
-      Footer
-    </span>
+    <button
+      class="button"
+    >
+      See More
+    </button>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

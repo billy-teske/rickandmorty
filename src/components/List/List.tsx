@@ -10,13 +10,14 @@ const List = ({ characters }: IPropsList) => (
     <ul className={styles.list}>
         {characters.map(character => (
             <Card
+                gender={character.gender}
+                id={character.id}
+                image={character.image}
                 key={character.id}
                 name={character.name}
-                status={character.status}
                 species={character.species}
+                status={character.status}
                 type={character.type}
-                gender={character.gender}
-                image={character.image}
             />
         ))}
     </ul>

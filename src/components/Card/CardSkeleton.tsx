@@ -3,9 +3,9 @@ import listStyle from '../List/List.module.css';
 
 const CardSkeleton = () => (
     <div className={listStyle.list}>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((id) => (
+        {Array.from({ length: 20 }, (_, id) => (
             <div key={id} className={styles.skeleton} style={{
-                animationDelay: `${id / 2}s`
+                animationDelay: `${id / 10}s`
             }}></div>
         ))}
     </div>
