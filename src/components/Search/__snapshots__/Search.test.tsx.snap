@@ -5,29 +5,33 @@ exports[`Search Component should render a footer 1`] = `
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
+      <form
         class="search"
+        data-testid="form"
       >
         <input
-          aria-label="Buscar"
+          aria-label="Search"
           class="input"
-          placeholder="Buscar"
-          type="text"
+          data-testid="search"
+          placeholder="Search"
+          type="search"
         />
-      </div>
+      </form>
     </div>
   </body>,
   "container": <div>
-    <div
+    <form
       class="search"
+      data-testid="form"
     >
       <input
-        aria-label="Buscar"
+        aria-label="Search"
         class="input"
-        placeholder="Buscar"
-        type="text"
+        data-testid="search"
+        placeholder="Search"
+        type="search"
       />
-    </div>
+    </form>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

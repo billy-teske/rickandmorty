@@ -10,16 +10,6 @@ exports[`Head Component should render a footer 1`] = `
       >
         Rick and Morty
       </h1>
-      <div
-        class="search"
-      >
-        <input
-          aria-label="Buscar"
-          class="input"
-          placeholder="Buscar"
-          type="text"
-        />
-      </div>
     </div>
   </body>,
   "container": <div>
@@ -28,16 +18,6 @@ exports[`Head Component should render a footer 1`] = `
     >
       Rick and Morty
     </h1>
-    <div
-      class="search"
-    >
-      <input
-        aria-label="Buscar"
-        class="input"
-        placeholder="Buscar"
-        type="text"
-      />
-    </div>
   </div>,
   "debug": [Function],
   "findAllByAltText": [Function],

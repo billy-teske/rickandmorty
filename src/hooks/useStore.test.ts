@@ -63,4 +63,18 @@ describe('useStore Hook', () => {
 
         expect(mockSet).toHaveBeenCalled();
     });
+
+    it('should read set function shen change the filter', () => {
+        mockSet.mockImplementation((fn) => {
+            fn({ filter: 'a' });
+        });
+
+        const { result } = renderHook(() => useStore(store => store));
+
+        act(() => {
+            result.current.setFilter('a');
+        });
+
+        expect(mockSet).toHaveBeenCalled();
+    });
 });
