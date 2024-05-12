@@ -1,33 +1,32 @@
 import { useQuery } from 'react-query';
-import getCharacter, { TResultApiCharacter } from '../api/getCharacter';
+import { useParams } from 'react-router-dom';
+import getCharacter, { TCharacter } from '../api/getCharacter';
 import useStore from './useStore';
-import { useEffect } from 'react';
 
-const CHARACTERS_KEY = 'character-keys';
+const CHARACTER_KEY = 'character-keys';
 
-const useCharacters = () => {
-    const { characters, setCharacters, page, toPage, nextPage, toNextPage } = useStore(state => state);
-    const { isFetching, error, refetch } = useQuery({
-        queryKey: CHARACTERS_KEY,
+const useCharacter = () => {
+    const { id } = useParams();
+
+    const { characterState, setCharacters } = useStore(state => ({
+        characterState: state.characters.find(
+            character => !!id && character.id === parseInt(id)
+        ),
+        setCharacters: state.setCharacters,
+    }));
+
+    const { data: characterQuery } = useQuery({
+        queryKey: CHARACTER_KEY,
         queryFn: () => {
-            if (page !== nextPage) {
-                return getCharacter({ page: nextPage });
+            if (!characterState) {
+                return getCharacter({ id: parseInt(id || '0') || 0 });
             }
         },
         refetchOnWindowFocus: false,
-        onSuccess: ((data: TResultApiCharacter) => {
-            setCharacters(data?.results || []);
-            toPage();
-        })
+        onSuccess: ((data: TCharacter | null) => setCharacters(data ? [data] : []))
     });
 
-    useEffect(() => {
-        if (page !== nextPage) {
-            refetch();
-        }
-    }, [page, nextPage, refetch]);
-
-    return { isFetching, characters, error, seeMore: toNextPage };
+    return { character: characterState || characterQuery };
 };
 
-export default useCharacters;
+export default useCharacter;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1715482857763" clover="3.2.0">
-  <project timestamp="1715482857764" name="All files">
-    <metrics statements="114" coveredstatements="114" conditionals="21" coveredconditionals="21" methods="36" coveredmethods="36" elements="171" coveredelements="171" complexity="0" loc="114" ncloc="114" packages="12" files="14" classes="14"/>
+<coverage generated="1715554681784" clover="3.2.0">
+  <project timestamp="1715554681784" name="All files">
+    <metrics statements="127" coveredstatements="127" conditionals="30" coveredconditionals="30" methods="39" coveredmethods="39" elements="196" coveredelements="196" complexity="0" loc="127" ncloc="127" packages="12" files="15" classes="15"/>
     <package name="src">
       <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <file name="App.tsx" path="C:\www\Globant\rickandmorty\src\App.tsx">
@@ -38,8 +38,8 @@
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
       <file name="characterMock.ts" path="C:\www\Globant\rickandmorty\src\api\__mock__\characterMock.ts">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-        <line num="3" count="6" type="stmt"/>
-        <line num="36" count="6" type="stmt"/>
+        <line num="3" count="7" type="stmt"/>
+        <line num="36" count="7" type="stmt"/>
       </file>
     </package>
     <package name="src.components.Card">
@@ -137,29 +137,45 @@
       </file>
     </package>
     <package name="src.containers.Profile">
-      <metrics statements="15" coveredstatements="15" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
+      <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="Profile.tsx" path="C:\www\Globant\rickandmorty\src\containers\Profile\Profile.tsx">
-        <metrics statements="15" coveredstatements="15" conditionals="3" coveredconditionals="3" methods="4" coveredmethods="4"/>
+        <metrics statements="13" coveredstatements="13" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>
         <line num="3" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
         <line num="7" count="2" type="stmt"/>
-        <line num="8" count="2" type="stmt"/>
-        <line num="9" count="2" type="cond" truecount="2" falsecount="0"/>
-        <line num="12" count="2" type="stmt"/>
-        <line num="13" count="2" type="stmt"/>
-        <line num="16" count="2" type="cond" truecount="1" falsecount="0"/>
-        <line num="17" count="1" type="stmt"/>
-        <line num="44" count="1" type="stmt"/>
-        <line num="46" count="1" type="stmt"/>
-        <line num="63" count="1" type="stmt"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="2" type="stmt"/>
+        <line num="13" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="14" count="1" type="stmt"/>
+        <line num="41" count="1" type="stmt"/>
+        <line num="43" count="1" type="stmt"/>
+        <line num="60" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.hooks">
-      <metrics statements="28" coveredstatements="28" conditionals="4" coveredconditionals="4" methods="16" coveredmethods="16"/>
+      <metrics statements="43" coveredstatements="43" conditionals="15" coveredconditionals="15" methods="21" coveredmethods="21"/>
       <file name="useCharacter.ts" path="C:\www\Globant\rickandmorty\src\hooks\useCharacter.ts">
+        <metrics statements="15" coveredstatements="15" conditionals="11" coveredconditionals="11" methods="5" coveredmethods="5"/>
+        <line num="1" count="1" type="stmt"/>
+        <line num="2" count="1" type="stmt"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="8" count="1" type="stmt"/>
+        <line num="9" count="3" type="stmt"/>
+        <line num="11" count="3" type="stmt"/>
+        <line num="13" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="18" count="3" type="stmt"/>
+        <line num="21" count="2" type="cond" truecount="1" falsecount="0"/>
+        <line num="22" count="2" type="cond" truecount="4" falsecount="0"/>
+        <line num="26" count="2" type="cond" truecount="2" falsecount="0"/>
+        <line num="29" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="32" count="1" type="stmt"/>
+      </file>
+      <file name="useCharacters.ts" path="C:\www\Globant\rickandmorty\src\hooks\useCharacters.ts">
         <metrics statements="17" coveredstatements="17" conditionals="4" coveredconditionals="4" methods="5" coveredmethods="5"/>
         <line num="1" count="1" type="stmt"/>
         <line num="2" count="1" type="stmt"/>

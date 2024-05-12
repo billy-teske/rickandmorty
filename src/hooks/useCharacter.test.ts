@@ -1,98 +1,68 @@
 import { renderHook } from '@testing-library/react';
+import { useParams } from 'react-router-dom';
 import { useQuery } from 'react-query';
 import getCharacter from '../api/getCharacter';
-import useCharacters from './useCharacter';
 import useStore from './useStore';
 import characterMock from '../api/__mock__/characterMock';
+import useCharacter from './useCharacter';
 
+jest.mock('react-router-dom', () => ({
+    useParams: jest.fn(),
+}));
 jest.mock('react-query', () => ({
     useQuery: jest.fn(),
 }));
 jest.mock('../api/getCharacter', () => jest.fn());
 jest.mock('./useStore', () => jest.fn());
 
-const mockGetCharacter = jest.fn();
+const mockSetCharacters = jest.fn();
+(useStore as unknown as jest.Mock).mockImplementation((fn) => fn({
+    characters: characterMock.results,
+    setCharacters: mockSetCharacters,
+}));
 
+const mockGetCharacter = jest.fn();
 (getCharacter as jest.Mock).mockImplementation(mockGetCharacter);
 
-const mockSetCharacters = jest.fn();
-const mockToPage = jest.fn();
-const mockToNextPage = jest.fn();
-
-(useStore as unknown as jest.Mock).mockImplementation((fn) => {
-    fn();
-    return {
-        characters: characterMock.results,
-        setCharacters: mockSetCharacters,
-        page: 1,
-        toPage: mockToPage,
-        nextPage: 2,
-        toNextPage: mockToNextPage,
-    };
-});
-
-describe('useCharacter hook', () => {
-    it('should return isFetching', () => {
+describe('useCharacter Hook', () => {
+    it('should return a character data source store', () => {
+        (useParams as unknown as jest.Mock).mockReturnValue({ id: '361' });
         (useQuery as jest.Mock).mockReturnValue({
-            isFetching: true,
-            refetch: jest.fn(),
+            character: characterMock.results[0]
         });
 
-        const { result } = renderHook(() => useCharacters());
+        const { result } = renderHook(() => useCharacter());
 
-        expect(result.current.isFetching).toBeTruthy();
+        expect(result.current.character).toEqual(characterMock.results[0]);
     });
 
-    it('should return error', () => {
-        (useQuery as jest.Mock).mockReturnValue({
-            error: true,
-            refetch: jest.fn(),
-        });
-
-        const { result } = renderHook(() => useCharacters());
-
-        expect(result.current.error).toBeTruthy();
-    });
-
-    it('should return characters', () => {
+    it('should return character source api when does not data source store', () => {
+        (useParams as unknown as jest.Mock).mockReturnValue({ id: '54' });
         (useQuery as jest.Mock).mockImplementation(({ queryFn, onSuccess }) => {
             queryFn();
-            onSuccess(characterMock);
+            onSuccess(characterMock.results[0]);
 
-            return {
-                refetch: jest.fn(),
-            };
+            return { data: characterMock.results[0] };
         });
 
-        const { result } = renderHook(() => useCharacters());
+        const { result } = renderHook(() => useCharacter());
 
         expect(mockGetCharacter).toHaveBeenCalled();
         expect(mockSetCharacters).toHaveBeenCalled();
-        expect(mockToPage).toHaveBeenCalled();
-        expect(result.current.characters).toEqual(characterMock.results);
+        expect(result.current.character).toEqual(characterMock.results[0]);
     });
 
-    it('should return empty characters when it does not return data', () => {
-        const mockSetCharactersWhenEmptyData = jest.fn();
-        (useStore as unknown as jest.Mock).mockReturnValue({
-            characters: [],
-            setCharacters: mockSetCharactersWhenEmptyData,
-            page: 1,
-            toPage: mockToPage,
-            nextPage: 2,
-            toNextPage: mockToNextPage,
+    it('should does not return character when id not exist', () => {
+        (useParams as unknown as jest.Mock).mockReturnValue({ id: null });
+        (useQuery as jest.Mock).mockImplementation(({ queryFn, onSuccess }) => {
+            queryFn();
+            onSuccess(null);
+
+            return { data: null };
         });
 
-        (useQuery as jest.Mock).mockImplementation(({ onSuccess }) => {
-            onSuccess();
+        const { result } = renderHook(() => useCharacter());
 
-            return {
-                refetch: jest.fn(),
-            };
-        });
-
-        renderHook(() => useCharacters());
-
-        expect(mockSetCharactersWhenEmptyData).toHaveBeenCalledWith([]);
+        expect(result.current.character).toEqual(null);
     });
 });

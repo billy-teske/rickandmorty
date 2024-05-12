@@ -1,13 +1,10 @@
 import { useEffect } from 'react';
-import { Link, useParams } from 'react-router-dom';
-import useStore from '../../hooks/useStore';
+import { Link } from 'react-router-dom';
+import useCharacter from '../../hooks/useCharacter';
 import styles from './Profile.module.css';
 
 const Profile = () => {
-    const { id } = useParams();
-    const character = useStore(state => state.characters.find(
-        character => !!id && character.id === parseInt(id)
-    ));
+    const { character } = useCharacter();
 
     useEffect(() => {
         window.scrollTo(0, 0);
