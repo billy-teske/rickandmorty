@@ -1,11 +1,11 @@
 import List from '../../components/List/List';
 import Search from '../../components/Search/Search';
 import CardSkeleton from '../../components/Card/CardSkeleton';
-import useCharacter from '../../hooks/useCharacter';
+import useCharacters from '../../hooks/useCharacters';
 import styles from './Home.module.css';
 
 const Home = () => {
-    const { isFetching, characters, error, seeMore } = useCharacter();
+    const { isFetching, characters, error, seeMore } = useCharacters();
 
     return (
         <>
