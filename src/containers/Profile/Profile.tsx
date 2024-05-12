@@ -1,7 +1,7 @@
-import { useEffect } from "react";
-import { Link, useParams } from "react-router-dom";
-import useStore from "../../hooks/useStore";
-import styles from "./Profile.module.css";
+import { useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import useStore from '../../hooks/useStore';
+import styles from './Profile.module.css';
 
 const Profile = () => {
     const { id } = useParams();

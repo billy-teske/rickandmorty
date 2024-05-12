@@ -26,7 +26,7 @@ interface IPropsGetCharacter {
     page?: number;
 }
 
-export type TResultApiCharacters = {
+export type TResultApiCharacter = {
     info: {
         count: number;
         pages: number;
@@ -36,7 +36,7 @@ export type TResultApiCharacters = {
     results: TCharacter[];
 };
 
-type TGetCharacter = (props: IPropsGetCharacter) => Promise<TResultApiCharacters>;
+type TGetCharacter = (props: IPropsGetCharacter) => Promise<TResultApiCharacter | TCharacter>;
 
 const getCharacter: TGetCharacter = async ({ id, page }) => {
     const params = id ? `/${id}` : `?page=${page || 0}`;

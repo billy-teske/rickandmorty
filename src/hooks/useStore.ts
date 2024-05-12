@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { TCharacter } from '../api/getCharacter';
 
-type TState = {
+export type TState = {
     characters: TCharacter[];
     setCharacters: (newItems: TCharacter[]) => void;
     page: number;

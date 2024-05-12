@@ -32,11 +32,9 @@ exports[`Card Component should render a card 1`] = `
                
               JK
             </p>
-            <button
-              class="button"
-            >
-              more info
-            </button>
+            <span>
+              Link
+            </span>
           </figcaption>
         </figure>
       </li>
@@ -70,11 +68,9 @@ exports[`Card Component should render a card 1`] = `
              
             JK
           </p>
-          <button
-            class="button"
-          >
-            more info
-          </button>
+          <span>
+            Link
+          </span>
         </figcaption>
       </figure>
     </li>

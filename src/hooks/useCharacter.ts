@@ -1,5 +1,5 @@
 import { useQuery } from 'react-query';
-import getCharacters from '../api/getCharacter';
+import getCharacter, { TResultApiCharacter } from '../api/getCharacter';
 import useStore from './useStore';
 import { useEffect } from 'react';
 
@@ -11,11 +11,11 @@ const useCharacters = () => {
         queryKey: CHARACTERS_KEY,
         queryFn: () => {
             if (page !== nextPage) {
-                return getCharacters({ page: nextPage });
+                return getCharacter({ page: nextPage });
             }
         },
         refetchOnWindowFocus: false,
-        onSuccess: ((data) => {
+        onSuccess: ((data: TResultApiCharacter) => {
             setCharacters(data?.results || []);
             toPage();
         })

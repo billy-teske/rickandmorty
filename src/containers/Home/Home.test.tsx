@@ -4,7 +4,7 @@ import Head from '../../components/Head/Head';
 import List from '../../components/List/List';
 import Footer from '../../components/Footer/Footer';
 import CardSkeleton from '../../components/Card/CardSkeleton';
-import useCharacter from '../../hooks/useCharacters';
+import useCharacter from '../../hooks/useCharacter';
 import characterMock from '../../api/__mock__/characterMock';
 
 jest.mock('../../components/Head/Head', () => jest.fn());
@@ -21,6 +21,7 @@ jest.mock('../../hooks/useCharacter', () => jest.fn());
 describe('Home Component', () => {
     it('should render Home when load characters', () => {
         (useCharacter as jest.Mock).mockReturnValue({
+            characters: [],
             isFetching: true,
         });
 
@@ -33,6 +34,7 @@ describe('Home Component', () => {
 
     it('should render Home when the api have a error', () => {
         (useCharacter as jest.Mock).mockReturnValue({
+            characters: [],
             error: true,
         });
 

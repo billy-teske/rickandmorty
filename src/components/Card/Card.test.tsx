@@ -1,6 +1,10 @@
 import { render } from '@testing-library/react';
 import Card from './Card';
 
+jest.mock('react-router-dom', () => ({
+    Link: () => <span>Link</span>,
+}));
+
 describe('Card Component', () => {
     it('should render a card', () => {
         const result = render(

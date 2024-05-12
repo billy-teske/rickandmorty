@@ -8,41 +8,9 @@ exports[`List Component should render a footer 1`] = `
       <ul
         class="list"
       >
-        <li
-          class="card"
-          style="background-image: url(https://rickandmortyapi.com/api/character/avatar/361.jpeg);"
-        >
-          <figure
-            class="figure"
-          >
-            <img
-              alt="imagen"
-              class="img"
-              src="https://rickandmortyapi.com/api/character/avatar/361.jpeg"
-            />
-            <figcaption
-              class="figcaption"
-            >
-              <h2>
-                Toxic Rick
-              </h2>
-              <p>
-                Male
-                 
-                Humanoid
-                 
-                Dead
-                 
-                Rick's Toxic Side
-              </p>
-              <button
-                class="button"
-              >
-                more info
-              </button>
-            </figcaption>
-          </figure>
-        </li>
+        <span>
+          Card
+        </span>
       </ul>
     </div>
   </body>,
@@ -50,41 +18,9 @@ exports[`List Component should render a footer 1`] = `
     <ul
       class="list"
     >
-      <li
-        class="card"
-        style="background-image: url(https://rickandmortyapi.com/api/character/avatar/361.jpeg);"
-      >
-        <figure
-          class="figure"
-        >
-          <img
-            alt="imagen"
-            class="img"
-            src="https://rickandmortyapi.com/api/character/avatar/361.jpeg"
-          />
-          <figcaption
-            class="figcaption"
-          >
-            <h2>
-              Toxic Rick
-            </h2>
-            <p>
-              Male
-               
-              Humanoid
-               
-              Dead
-               
-              Rick's Toxic Side
-            </p>
-            <button
-              class="button"
-            >
-              more info
-            </button>
-          </figcaption>
-        </figure>
-      </li>
+      <span>
+        Card
+      </span>
     </ul>
   </div>,
   "debug": [Function],
